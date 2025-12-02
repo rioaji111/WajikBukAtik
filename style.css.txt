@@ -1,0 +1,143 @@
+/* Reset minimal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFF8F3;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  text-align: center;
+}
+.hero img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+.hero-text {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.hero-text p {
+  margin: 0.5rem 0 1.2rem;
+  font-weight: 300;
+}
+
+/* Tombol */
+.btn-wa {
+  background: #3C6255;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.btn-wa:hover {
+  background: #2e4b42;
+}
+
+/* PRODUK */
+.produk {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.produk h2 {
+  margin-bottom: 1.5rem;
+  color: #A17754;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 280px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 0.75rem 0 0.25rem;
+  color: #3C6255;
+}
+.card p {
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+.card strong {
+  display: block;
+  margin: 0.75rem 0 1rem;
+  color: #A17754;
+}
+
+/* CARA PESAN */
+.cara {
+  background: #fff;
+  padding: 2rem 1rem;
+}
+.cara h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #A17754;
+}
+.cara ol {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Tablet ke atas */
+@media (min-width: 600px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  .produk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .card {
+    margin: 0;
+  }
+}
