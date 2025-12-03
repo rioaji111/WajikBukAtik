@@ -1,7 +1,7 @@
 /************  GANTI_DI_SINI  ************/
-const TOKEN    = 'GANTI_TOKEN_ANDA';              // <-- paste GitHub personal token
-const GIST_ID  = 'GANTI_GIST_ID_ANDA';            // <-- paste ID gist Anda
-const PASSWORD = 'wajiksolo';                     // boleh diganti
+const TOKEN    = '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';              // <-- paste GitHub personal token
+const GIST_ID  = '5c5af4a6251465d7d353aa21f499bebe';            // <-- paste ID gist Anda
+const PASSWORD = 'rioaji777';                     // boleh diganti
 /*****************************************/
 
 function login(){
