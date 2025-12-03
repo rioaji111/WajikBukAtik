@@ -53,5 +53,62 @@
     <p>Jam buka: 08.00 – 17.00 WIB</p>
     <small>&copy; 2024 Wajik Buk Atik. Hak cipta dilindungi.</small>
   </footer>
+
+  <script>
+  /************  GANTI_DI_SINI  ************/
+  const GIST_ID  = 'GANTI_GIST_ID_ANDA'; // <-- sama dengan di admin.js
+  const DEFAULT_WA = '6281234567890';    // <-- nomor WA Anda
+  /*****************************************/
+
+  const DEFAULT_PRODUK = [{
+    nama: 'Wajik Original',
+    harga: 25000,
+    stok: 20,
+    foto: 'images/product1.jpg',
+    desk: 'Manis lembut tanpa pengawet, dibuat dari ketan pilihan.',
+    wa: DEFAULT_WA
+  }];
+
+  async function loadProduk(){
+    if(GIST_ID==='GANTI_GIST_ID_ANDA'){
+      renderProduk(DEFAULT_PRODUK);
+      return;
+    }
+    try{
+      const raw = `https://gist.githubusercontent.com/${GIST_ID}/raw/data.json`;
+      const res = await fetch(raw+'?t='+Date.now());
+      if(!res.ok) throw new Error('Gist tidak ada');
+      const data = await res.json();
+      renderProduk(data);
+    }catch(e){
+      console.warn('Load gist gagal, pakai default:', e);
+      renderProduk(DEFAULT_PRODUK);
+    }
+  }
+
+  function renderProduk(list){
+    const container = document.querySelector('.produk');
+    container.innerHTML = '<h2>Varian Rasa</h2>';
+    list.forEach(p=>{
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.foto}" alt="${p.nama}">
+        <h3>${p.nama}</h3>
+        <p>${p.desk}</p>
+        <strong>Rp ${p.harga.toLocaleString('id')} / kotak</strong>
+        <p>Stok: ${p.stok} pcs</p>
+        <a class="btn-wa" href="https://wa.me/${p.wa}?text=Saya%20mau%20pesan%20${encodeURIComponent(p.nama)}" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i> Pesan WA
+        </a>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  loadProduk();
+</script>
+  
 </body>
 </html>
+
