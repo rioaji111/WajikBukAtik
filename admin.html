@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin Wajik Buk Atik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#FFF8F3;font-family:'Poppins',sans-serif;padding:1rem;color:#333}
+    .box{max-width:500px;margin:2rem auto;background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    h2{color:#3C6255;text-align:center;margin-bottom:1rem}
+    label{font-weight:600;font-size:.9rem;margin-top:.5rem;display:block}
+    input,textarea,button{width:100%;padding:.6rem;margin-top:.3rem;border:1px solid #ccc;border-radius:4px;font:inherit}
+    button{background:#3C6255;color:#fff;border:none;cursor:pointer;font-weight:600}
+    button:hover{background:#2e4b42}
+    .preview-card{background:#fff8f3;border:1px solid #a17754;border-radius:8px;padding:1rem;margin-top:1rem;text-align:center}
+    .preview-card img{max-height:120px;margin:0 auto;display:block}
+    .hidden{display:none}
+    #info{margin-top:1rem;font-size:.9rem;text-align:center}
+  </style>
+</head>
+
+<body>
+  <!-- LOGIN -->
+  <div id="loginBox" class="box">
+    <h2>Masuk Admin</h2>
+    <input id="passInput" type="password" placeholder="Password admin">
+    <button onclick="login()">Masuk</button>
+  </div>
+
+  <!-- PANEL ADMIN -->
+  <div id="adminBox" class="box hidden">
+    <h2>Input Produk</h2>
+
+    <label>Nama Produk</label>
+    <input id="nama" placeholder="Contoh: Wajik Original">
+
+    <label>Harga (Rp)</label>
+    <input id="harga" type="number" placeholder="25000">
+
+    <label>Stok (pcs)</label>
+    <input id="stok" type="number" placeholder="20">
+
+    <label>Link Foto (imgbb.com → copy direct link)</label>
+    <input id="foto" placeholder="https://i.ibb.co/xxxxx/wajik.jpg">
+
+    <label>Deskripsi</label>
+    <textarea id="desk" rows="3" placeholder="Manis lembut tanpa pengawet"></textarea>
+
+    <button onclick="previewProduct()">Preview</button>
+    <button onclick="saveGist()">Simpan ke Gist</button>
+
+    <div id="previewCard" class="preview-card hidden"></div>
+    <p id="info"></p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
